@@ -10,6 +10,7 @@ public class Task {
     protected int estado;
     private LocalDate fechaLimite;
 
+
     /**
      *  Formato: "dd/MM/yyyy"
      */
@@ -27,6 +28,13 @@ public class Task {
         this.prioridad = prioridad;
         this.estado = 0;
         this.fechaLimite = LocalDate.parse(fechaLimite,parser);
+    }
+
+    public Task(String descripcion, int prioridad,LocalDate fechaLimite) {
+        this.descripcion = descripcion;
+        this.prioridad = prioridad;
+        this.estado = 0;
+        this.fechaLimite = fechaLimite;
     }
 
     public void modificarDescripcion(String descripcion){
@@ -64,5 +72,21 @@ public class Task {
             prefix = prefix.concat("(Vencida) ");
         }
         return prefix.concat(descripcion);
+    }
+
+    public LocalDate getFechaLimite() {
+        return this.fechaLimite;
+    }
+
+    public boolean isTitulo(String descripcion){
+        return descripcion.equals(this.descripcion);
+    }
+
+    public boolean isTerminada() {
+        return this.estado == 1;
+    }
+
+    public boolean contiene(String x) {
+        return descripcion.contains(x);
     }
 }

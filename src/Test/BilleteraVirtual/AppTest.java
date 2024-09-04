@@ -31,12 +31,14 @@ class AppTest {
     @Test
     void transferencia(){
         app.transferir("Romero Nicolas","Graciano Elias",100,"Dolar");
-        assertEquals("0 Dolars", app.getSaldo("Romero Nicolas"));
-        assertEquals("200 Dolars", app.getSaldo("Graciano Elias"));
+        assertEquals("0.0 Dolars", app.getSaldo("Romero Nicolas"));
+        assertEquals("200.0 Dolars", app.getSaldo("Graciano Elias"));
     }
 
     @Test
     void transferenciaConversor(){
-        app.transferir("Romero Nicolas","Graciano Elias",100,"arss");
+        app.transferir("Romero Nicolas","Graciano Elias",100,"ars");
+        assertEquals("99.9 Dolars", app.getSaldo("Romero Nicolas"));
+        assertEquals("100.1 Dolars", app.getSaldo("Graciano Elias"));
     }
 }

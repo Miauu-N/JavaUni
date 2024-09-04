@@ -30,7 +30,7 @@ public class Dinero {
     }
 
     public String toString(){
-        return monto + moneda.getNombre() + "s";
+        return monto + " " + moneda.getNombre() + "s";
     }
 
     public void minus(double monto) {

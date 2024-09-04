@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TaskManagerTest {
     TaskManager manager;
+
     @BeforeEach
     void setUp() {
         manager = new TaskManager();
